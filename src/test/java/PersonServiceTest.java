@@ -1,10 +1,13 @@
 import com.indasil.rc.mybatis.mapper.PersonMapper;
+import com.indasil.rc.mybatis.service.PersonService;
 import com.indasil.rc.mybatis.spring.domain.Person;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 import org.springframework.util.Assert;
 
 /**
@@ -12,14 +15,26 @@ import org.springframework.util.Assert;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath*:rc-mybatis-spring.xml"})
+
 public class PersonServiceTest {
 
     @Autowired
     private PersonMapper personMapper;
 
+    @Autowired
+    private PersonService personService;
+
     @Test
     public void testPerson() {
         Person p = personMapper.read(6L, null);
         Assert.notNull(p);
+    }
+
+    @Test
+    public void testCreate() {
+        Person p = new Person();
+        p.setName("Issam");
+        personService.save(p);
+
     }
 }

@@ -21,4 +21,13 @@ public class PersonService {
 
         return personMapper.read(id, null);
     }
+
+    public void save(Person person) {
+
+        if (person.getId() == null) {
+            personMapper.create(person);
+        } else {
+            personMapper.update(person);
+        }
+    }
 }

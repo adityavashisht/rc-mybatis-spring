@@ -9,6 +9,12 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <org.slf4j-version>1.7.12</org.slf4j-version>
+        <org.apache.logging.log4j>2.4</org.apache.logging.log4j>
+
+    </properties>
+
     <dependencies>
 
         <dependency>
@@ -71,6 +77,44 @@
             <artifactId>mybatis-spring</artifactId>
             <version>1.2.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jcl</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+
+
+
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>${org.slf4j-version}</version>
+        </dependency>
+
+        <!-- Async Loggers -->
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+        <!-- Core stuff -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${org.apache.logging.log4j}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${org.apache.logging.log4j}</version>
+        </dependency>
+
+        <!-- end log4j2 -->
     </dependencies>
 
 
