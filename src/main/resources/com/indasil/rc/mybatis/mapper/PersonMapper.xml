@@ -39,6 +39,7 @@
     <update id="update" parameterType="com.indasil.rc.mybatis.spring.domain.Person">
         update Person SET
         name = #{person.name}
+        where id = #{person.id}
     </update>
 
     <delete id="delete" parameterType="long">
